@@ -1,23 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Moje stránka</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertikální centrování obsahu */
+            align-items: center;     /* horizontální centrování */
+            position: relative;
+        }
+
+        /* Obrázek / GIF zvětšený */
+        .main-image {
+            width: 300px;   /* zvětši dle potřeby */
+            height: auto;
+            display: block;
+        }
+
+        /* Text dole */
+        .footer {
+            position: absolute;
+            bottom: 10px;  /* pár mm nad okrajem */
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    </style>
 </head>
 <body>
-  <main class="center">
-    <div class="card">
-      <img id="slideshow" class="avatar" src="img1.png" alt="obr1">
 
-      <div class="contact">
-        <div class="name">Jméno Příjmení</div>
-        <div class="phone">+420 123 456 789</div>
-      </div>
+    <!-- Obrázek (GIF nebo přepínané PNG přes JS) -->
+    <img id="switchImage" class="main-image" src="img1.png" alt="animace">
+
+    <!-- Text dole vedle sebe -->
+    <div class="footer">
+        <span>B. Ch.</span>
+        <span>+420 735 936 968</span>
     </div>
-  </main>
 
-  <script src="script.js"></script>
+    <!-- Přepínání 4 PNG obrázků -->
+    <script>
+        const images = ["img1.png", "img2.png", "img3.png", "img4.png"];
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            document.getElementById("switchImage").src = images[index];
+        }, 220); // rychlost přepínání
+    </script>
+
 </body>
 </html>
