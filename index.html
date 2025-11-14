@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
 
-    <title>chwastek</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertikální centrování obsahu */
+            align-items: center;     /* horizontální centrování */
+            position: relative;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        /* Obrázek / GIF zvětšený */
+        .main-image {
+            width: 300px;   /* zvětši dle potřeby */
+            height: auto;
+            display: block;
+        }
+
+        /* Text dole */
+        .footer {
+            position: absolute;
+            bottom: 10px;  /* pár mm nad okrajem */
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    </style>
 </head>
 <body>
 
-    <div id="image-container">
-        <img src="img1.png" class="active">
-        <img src="img2.png">
-        <img src="img3.png">
-        <img src="img4.png">
-        <img src="img5.png">
-        <img src="img7.png">
+    <!-- Obrázek (GIF nebo přepínané PNG přes JS) -->
+    <img id="switchImage" class="main-image" src="img1.png" alt="animace">
+
+    <!-- Text dole vedle sebe -->
+    <div class="footer">
+        <span>bronislav@chwastek.cz</span>
+        <span>+420 735 936 968</span>
     </div>
 
-    <div id="contact-info">
-        bronislav@chwastek.cz • +420 735 936 968
-    </div>
+    <!-- Přepínání 7 PNG obrázků -->
+    <script>
+        const images = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img7.png"];
+        let index = 0;
 
-    <script src="script.js"></script>
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            document.getElementById("switchImage").src = images[index];
+        }, 220); // rychlost přepínání
+    </script>
+
 </body>
 </html>
