@@ -1,50 +1,48 @@
-/* Reset */
-*{box-sizing:border-box;margin:0;padding:0}
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
-/* Celá stránka bílá */
-html,body{
-  height:100%;
-  background:#fff;
-  color:#000;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Dongle", sans-serif;
 }
 
-/* Centrum stránky */
-.center{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+#image-container {
+    width: 300px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Kontejner obrázek + text */
-.card{
-  display:flex;
-  align-items:center;
-  gap:20px;
+#image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* Obrázek – rozměr cca 5×3 cm */
-.avatar{
-  width:189px;  /* ~5 cm */
-  height:113px; /* ~3 cm */
-  object-fit:contain;
+#image-container img.active {
+    opacity: 1;
 }
 
-/* Text u obrázku */
-.contact{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+#contact-info {
+    position: fixed;
+    bottom: env(safe-area-inset-bottom, 20px);
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    opacity: 0.55;
+    letter-spacing: 0.5px;
 }
 
-.name{
-  font-size:20px;
-  font-weight:600;
-}
-
-.phone{
-  font-size:16px;
-  opacity:0.85;
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
 }
