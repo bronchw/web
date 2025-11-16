@@ -1,4 +1,8 @@
-const images = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png", "img9.png"];
+const images = [
+  "img1.png", "img2.png", "img3.png", "img4.png",
+  "img5.png", "img6.png", "img7.png", "img8.png", "img9.png"
+];
+
 let current = 0;
 
 function changeImage() {
@@ -6,5 +10,4 @@ function changeImage() {
   document.getElementById("slideshow").src = images[current];
 }
 
-// změna obrázku každých 250 ms (můžeš změnit)
-setInterval(changeImage, 250);
+setInterval(changeImage, 220);

@@ -2,64 +2,29 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Chwastek</title>
 
     <link rel="icon" href="ch.png" type="image/png">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: white;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* vertikální centrování obsahu */
-            align-items: center;     /* horizontální centrování */
-            position: relative;
-        }
+    <!-- Minimalistický clean font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
 
-        /* Obrázek / GIF zvětšený */
-        .main-image {
-            width: 300px;   /* zvětši dle potřeby */
-            height: auto;
-            display: block;
-        }
-
-        /* Text dole */
-        .footer {
-            position: absolute;
-            bottom: 10px;  /* pár mm nad okrajem */
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-            font-weight: 400;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <!-- Obrázek (GIF nebo přepínané PNG přes JS) -->
-    <img id="switchImage" class="main-image" src="img1.png" alt="animace">
-
-    <!-- Text dole vedle sebe -->
-    <div class="footer">
-        <span>bronislav@chwastek.cz</span>
-        <span>+420 735 936 968</span>
+    <div class="wrapper">
+        <img id="slideshow" class="main-image" src="img1.png" alt="Slideshow">
     </div>
 
-    <!-- Přepínání 7 PNG obrázků -->
-    <script>
-        const images = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png", "img9.png"];
-        let index = 0;
+    <div class="footer">
+        <span class="item">bronislav@chwastek.cz</span>
+        <span class="dot">•</span>
+        <span class="item">+420 735 936 968</span>
+    </div>
 
-        setInterval(() => {
-            index = (index + 1) % images.length;
-            document.getElementById("switchImage").src = images[index];
-        }, 220); // rychlost přepínání
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

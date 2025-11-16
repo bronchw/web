@@ -1,50 +1,61 @@
-/* Reset */
-*{box-sizing:border-box;margin:0;padding:0}
-
-/* Celá stránka bílá */
-html,body{
-  height:100%;
-  background:#fff;
-  color:#000;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Centrum stránky */
-.center{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+/* Celá stránka */
+html, body {
+  height: 100%;
+  background: white;
+  font-family: "Dongle", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Kontejner obrázek + text */
-.card{
-  display:flex;
-  align-items:center;
-  gap:20px;
+/* Kontejner slideshow */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1cm; /* prostor okolo obrázku (≈1cm) */
 }
 
-/* Obrázek – rozměr cca 5×3 cm */
-.avatar{
-  width:189px;  /* ~5 cm */
-  height:113px; /* ~3 cm */
-  object-fit:contain;
+/* Obrázek / slideshow */
+.main-image {
+  width: 340px;      /* cca +1cm proti původnímu 300px */
+  height: auto;
+  display: block;
+  user-select: none;
 }
 
-/* Text u obrázku */
-.contact{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+/* Spodní kontakt */
+.footer {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom) + 12px); /* aby nebyl v Safari schovaný */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  opacity: 0.85;
 }
 
-.name{
-  font-size:20px;
-  font-weight:600;
+/* Puntík mezi kontakty */
+.footer .dot {
+  margin: 0 4px;
 }
 
-.phone{
-  font-size:16px;
-  opacity:0.85;
+/* Zabraňuje automatickému převedení na odkazy v Safaru */
+.footer span {
+  color: black;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+}
+
+/* Safari blokace automatických linků */
+meta[name="format-detection"] {
+  content: "telephone=no";
 }
