@@ -36,6 +36,7 @@ html, body {
   gap: 10px;
   font-size: 22px;
   opacity: 0.85;
+
   white-space: nowrap;
 }
 
@@ -43,21 +44,9 @@ html, body {
   margin: 0 4px;
 }
 
-/* Prevent auto-linking in Safari */
 .footer span {
   color: black;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-text-size-adjust: none;
-}
-
-
-@media (orientation: landscape), (min-aspect-ratio: 5/4) {
-  .footer {
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
-    bottom: auto;
-    justify-content: flex-start;
-  }
 }
