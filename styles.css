@@ -4,37 +4,36 @@
   box-sizing: border-box;
 }
 
-/* Celá stránka */
 html, body {
   height: 100%;
   background: white;
   font-family: "Dongle", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Kontejner slideshow */
+/* Slideshow container */
 .wrapper {
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1cm; /* prostor okolo obrázku (≈1cm) */
+  padding: 1cm;
 }
 
-/* Obrázek / slideshow */
+/* Image / slideshow */
 .main-image {
-  width: 340px;      /* cca +1cm proti původnímu 300px */
+  width: 340px;
   height: auto;
   display: block;
+  object-fit: contain;
   user-select: none;
 }
 
-/* Spodní kontakt */
+/* Footer */
 .footer {
   position: fixed;
-  bottom: calc(env(safe-area-inset-bottom) + 12px); /* aby nebyl v Safari schovaný */
+  bottom: calc(env(safe-area-inset-bottom) + 12px);
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -42,20 +41,15 @@ html, body {
   opacity: 0.85;
 }
 
-/* Puntík mezi kontakty */
+/* Dot separator */
 .footer .dot {
   margin: 0 4px;
 }
 
-/* Zabraňuje automatickému převedení na odkazy v Safaru */
+/* Prevent auto-linking in Safari */
 .footer span {
   color: black;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-text-size-adjust: none;
-}
-
-/* Safari blokace automatických linků */
-meta[name="format-detection"] {
-  content: "telephone=no";
 }
