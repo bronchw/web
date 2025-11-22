@@ -10,7 +10,7 @@ html, body {
   font-family: "Dongle", sans-serif;
 }
 
-/* Slideshow container */
+
 .wrapper {
   height: calc(100vh - 80px);
   display: flex;
@@ -19,7 +19,7 @@ html, body {
   padding: 1cm;
 }
 
-/* Image / slideshow */
+
 .main-image {
   width: 340px;
   height: auto;
@@ -28,7 +28,7 @@ html, body {
   user-select: none;
 }
 
-/* Footer */
+
 .footer {
   position: fixed;
   bottom: calc(env(safe-area-inset-bottom) + 12px);
@@ -39,9 +39,12 @@ html, body {
   gap: 10px;
   font-size: 22px;
   opacity: 0.85;
+
+
+  white-space: nowrap;
 }
 
-/* Dot separator */
+
 .footer .dot {
   margin: 0 4px;
 }
