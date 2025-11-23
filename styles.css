@@ -20,13 +20,15 @@ html, body {
 
 .main-image {
   width: 340px;
-  height: auto;
-  display: block;
-  object-fit: contain;
+  height: 340px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
   user-select: none;
   pointer-events: none;
+  -webkit-user-select: none;
   -webkit-user-drag: none;
-  user-drag: none;
   touch-action: none;
 }
 
@@ -40,7 +42,6 @@ html, body {
   gap: 10px;
   font-size: 22px;
   opacity: 0.85;
-
   white-space: nowrap;
 }
 
