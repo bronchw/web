@@ -22,3 +22,15 @@ function changeImage() {
 
 
 setInterval(changeImage, 220);
+
+const img = document.getElementById("mainAnimation");
+
+img.addEventListener("contextmenu", e => e.preventDefault());
+
+img.addEventListener("touchstart", e => {
+    if (e.touches.length > 0) {
+        e.preventDefault();
+    }
+}, { passive: false });
+
+document.addEventListener("gesturestart", e => e.preventDefault());
