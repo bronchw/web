@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Bronislav Chwastek • bronislav@chwastek.cz">
+    <meta name="description" content="Bronislav Chwastek">
 
     <title>Chwastek</title>
 
-    <link rel="icon" href="ch.png" type="image/png">
+    <!-- Ikona: SVG pro moderni prohlizece, PNG jako zaloha a pro iOS plochu. -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -16,7 +19,7 @@
 </head>
 
 <body>
-    
+
     <h1 style="font-size:1px;opacity:0;height:0;margin:0;padding:0;overflow:hidden;">
         Bronislav Chwastek
     </h1>
@@ -28,7 +31,9 @@
     <div class="footer">
         <span class="item">Bronislav Chwastek</span>
         <span class="dot">•</span>
-        <span class="item">bronislav@chwastek.cz</span>
+        <!-- Adresa v HTML neni. Sklada ji az skript v prohlizeci, aby ji
+             nesebral kazdy scraper, ktery cte jen zdrojak. -->
+        <span class="item" id="contact"></span>
     </div>
 
     <script src="script.js"></script>
